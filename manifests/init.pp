@@ -50,7 +50,7 @@ class aerospike (
         require => Package['wget'],
     } ->
     exec { "aerospike-extract":
-        command => "tar -C $dest -xzf $dest.tgz",
+        command => "tar -C $download_dir -xzf $dest.tgz",
         onlyif  => "test -f $dest.tgz",
     } ->
     exec { "aerospike-install-server":
