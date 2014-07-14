@@ -1,0 +1,8 @@
+name    'alexkappa-aerospike'
+version '0.0.1'
+source 'https://github.com/alexkappa/puppet-aerospike'
+author 'Alex Kalyvitis'
+license 'MIT'
+summary 'Puppet module to install Aerospike server'
+description 'Puppet module to install Aerospike server'
+project_page 'https://github.com/alexkappa/puppet-aerospike'
