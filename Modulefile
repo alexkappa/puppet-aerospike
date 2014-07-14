@@ -1,5 +1,5 @@
 name    'alexkappa-aerospike'
-version '0.0.1'
+version '0.0.2'
 source 'https://github.com/alexkappa/puppet-aerospike'
 author 'Alex Kalyvitis'
 license 'MIT'
