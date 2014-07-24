@@ -53,4 +53,11 @@ class aerospike (
     exec { "aerospike-install-tools":
         command => "dpkg -i $dest/aerospike-tools-$version.ubuntu12.04.x86_64.deb",
     }
+
+    file { "/etc/aerospike/aerospike.conf":
+        content => template("aerospike/aerospike.conf.erb"),
+        owner   => root,
+        group   => root,
+        mode    => 644,
+    }
 }

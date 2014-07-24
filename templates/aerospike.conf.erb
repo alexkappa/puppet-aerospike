@@ -1,0 +1,55 @@
+service {
+	user root
+	group root
+	paxos-single-replica-limit 1
+	pidfile /var/run/aerospike/asd.pid
+	service-threads 4
+	transaction-queues 4
+	transaction-threads-per-queue 4
+	proto-fd-max 15000
+}
+
+logging {
+	file /var/log/aerospike/aerospike.log {
+		context any info
+	}
+}
+
+network {
+	service {
+		address any
+		port 3000
+	}
+
+	heartbeat {
+		mode multicast
+		address 239.1.99.222
+		port 9918
+		interval 150
+		timeout 10
+	}
+
+	fabric {
+		port 3001
+	}
+
+	info {
+		port 3003
+	}
+}
+
+namespace foo {
+	replication-factor 2
+	memory-size 1G
+	default-ttl 30d
+
+	storage-engine memory
+}
+
+namespace bar {
+	replication-factor 2
+	memory-size 1G
+	default-ttl 30d
+
+	storage-engine memory
+}
