@@ -33,7 +33,9 @@ class aerospike (
 ) {
     Exec { path => ["/usr/local/bin", "/usr/bin", "/usr/bin", "/bin", "/sbin"] }
 
-    package { ["wget"]: }
+    package { ["wget", "libssl0.9.8", "libssl-dev", "liblua5.1-dev"]:
+        ensure => installed,
+    }
 
     $src = "http://www.aerospike.com/artifacts/aerospike-server-community/$version/aerospike-server-community-$version-ubuntu12.04.tgz"
     $dest = "$download_dir/aerospike-server-community-$version-ubuntu12.04"
